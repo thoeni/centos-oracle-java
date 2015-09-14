@@ -14,9 +14,10 @@ RUN	yum -y update && \
 	source /etc/environment && \
 	rm jdk-${UPDATE_VERSION}-linux-x64.rpm && \
 	yum -y install openssh-server && \
-	chkconfig sshd on && \
-	service sshd start
+	chkconfig sshd on
 
 ENV	JAVA_HOME=/usr/java/jdk${JAVA_VERSION}/
 
 EXPOSE	22
+
+CMD	["service sshd start"]
