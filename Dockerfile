@@ -12,6 +12,11 @@ RUN	yum -y update && \
 	export JAVA_HOME=/usr/java/jdk${JAVA_VERSION}/ && \
 	echo "export JAVA_HOME=/usr/java/jdk${JAVA_VERSION}/" | tee /etc/environment && \
 	source /etc/environment && \
-	rm jdk-${UPDATE_VERSION}-linux-x64.rpm
+	rm jdk-${UPDATE_VERSION}-linux-x64.rpm && \
+	yum -y install openssh-server && \
+	chkconfig sshd on && \
+	service sshd start
 
 ENV	JAVA_HOME=/usr/java/jdk${JAVA_VERSION}/
+
+EXPOSE	22
