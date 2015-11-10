@@ -1,8 +1,8 @@
 FROM	centos
 
-ENV	UPDATE_VERSION=8u60
-ENV	JAVA_VERSION=1.8.0_60
-ENV	BUILD=b27
+ENV	UPDATE_VERSION=8u66
+ENV	JAVA_VERSION=1.8.0_66
+ENV	BUILD=b17
 
 RUN	yum -y update && \
 	yum -y install wget && \
